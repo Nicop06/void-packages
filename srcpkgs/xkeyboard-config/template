@@ -15,6 +15,10 @@ changelog="https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/ra
 distfiles="${XORG_SITE}/data/xkeyboard-config/xkeyboard-config-${version}.tar.xz"
 checksum=169e075a92d957a57787c199e84e359df2931b7196c1c5b4a3d576ee6235a87c
 
+pre_configure() {
+       NOCONFIGURE=1 ./autogen.sh
+}
+
 post_install() {
 	vlicense COPYING
 }
